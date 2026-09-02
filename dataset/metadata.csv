@@ -1,0 +1,37 @@
+FileName,Label,RawLabel
+M_N_RUA.wav,Normal,Normal
+F_N_LUA.wav,Normal,Normal
+F_N_RMA.wav,Normal,Normal
+F_N_LMA.wav,Normal,Normal
+M_N_RLA.wav,Normal,Normal
+M_N_LLA.wav,Normal,Normal
+M_PR_RMA.wav,Crackle,Pleural Rub
+M_PR_LUA.wav,Crackle,Pleural Rub
+F_R_LUA.wav,Wheeze,Rhonchi
+M_W_LUA.wav,Wheeze,Wheezing
+M_N_LUA.wav,Normal,Normal
+F_R_RLA.wav,Wheeze,Rhonchi
+F_W_RUA.wav,Wheeze,Wheezing
+M_PR_LLA.wav,Crackle,Pleural Rub
+M_PR_LMA.wav,Crackle,Pleural Rub
+M_R_RUA.wav,Wheeze,Rhonchi
+M_R_LUA.wav,Wheeze,Rhonchi
+F_PR_LMA.wav,Crackle,Pleural Rub
+M_W_RLA.wav,Wheeze,Wheezing
+M_R_RLA.wav,Wheeze,Rhonchi
+M_N_RMA.wav,Normal,Normal
+M_R_LMA.wav,Wheeze,Rhonchi
+F_R_LMA.wav,Wheeze,Rhonchi
+F_N_LLA.wav,Normal,Normal
+M_W_RUA.wav,Wheeze,Wheezing
+M_N_LMA.wav,Normal,Normal
+F_PR_LLA.wav,Crackle,Pleural Rub
+M_W_RMA.wav,Wheeze,Wheezing
+M_PR_RUA.wav,Crackle,Pleural Rub
+M_W_LLA.wav,Wheeze,Wheezing
+M_R_LLA.wav,Wheeze,Rhonchi
+F_N_RLA.wav,Normal,Normal
+M_W_LMA.wav,Wheeze,Wheezing
+F_N_RUA.wav,Normal,Normal
+M_PR_RLA.wav,Crackle,Pleural Rub
+F_PR_LUA.wav,Crackle,Pleural Rub

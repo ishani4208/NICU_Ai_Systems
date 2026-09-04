@@ -1,37 +1,472 @@
-FileName,Label,RawLabel
-M_N_RUA.wav,Normal,Normal
-F_N_LUA.wav,Normal,Normal
-F_N_RMA.wav,Normal,Normal
-F_N_LMA.wav,Normal,Normal
-M_N_RLA.wav,Normal,Normal
-M_N_LLA.wav,Normal,Normal
-M_PR_RMA.wav,Crackle,Pleural Rub
-M_PR_LUA.wav,Crackle,Pleural Rub
-F_R_LUA.wav,Wheeze,Rhonchi
-M_W_LUA.wav,Wheeze,Wheezing
-M_N_LUA.wav,Normal,Normal
-F_R_RLA.wav,Wheeze,Rhonchi
-F_W_RUA.wav,Wheeze,Wheezing
-M_PR_LLA.wav,Crackle,Pleural Rub
-M_PR_LMA.wav,Crackle,Pleural Rub
-M_R_RUA.wav,Wheeze,Rhonchi
-M_R_LUA.wav,Wheeze,Rhonchi
-F_PR_LMA.wav,Crackle,Pleural Rub
-M_W_RLA.wav,Wheeze,Wheezing
-M_R_RLA.wav,Wheeze,Rhonchi
-M_N_RMA.wav,Normal,Normal
-M_R_LMA.wav,Wheeze,Rhonchi
-F_R_LMA.wav,Wheeze,Rhonchi
-F_N_LLA.wav,Normal,Normal
-M_W_RUA.wav,Wheeze,Wheezing
-M_N_LMA.wav,Normal,Normal
-F_PR_LLA.wav,Crackle,Pleural Rub
-M_W_RMA.wav,Wheeze,Wheezing
-M_PR_RUA.wav,Crackle,Pleural Rub
-M_W_LLA.wav,Wheeze,Wheezing
-M_R_LLA.wav,Wheeze,Rhonchi
-F_N_RLA.wav,Normal,Normal
-M_W_LMA.wav,Wheeze,Wheezing
-F_N_RUA.wav,Normal,Normal
-M_PR_RLA.wav,Crackle,Pleural Rub
-F_PR_LUA.wav,Crackle,Pleural Rub
+FileName,Label,RawLabel,Source
+ls_M_N_RUA.wav,Normal,Normal,LS
+ls_F_N_LUA.wav,Normal,Normal,LS
+ls_F_N_RMA.wav,Normal,Normal,LS
+ls_F_N_LMA.wav,Normal,Normal,LS
+ls_M_N_RLA.wav,Normal,Normal,LS
+ls_M_N_LLA.wav,Normal,Normal,LS
+ls_M_PR_RMA.wav,Crackle,Pleural Rub,LS
+ls_M_PR_LUA.wav,Crackle,Pleural Rub,LS
+ls_F_R_LUA.wav,Wheeze,Rhonchi,LS
+ls_M_W_LUA.wav,Wheeze,Wheezing,LS
+ls_M_N_LUA.wav,Normal,Normal,LS
+ls_F_R_RLA.wav,Wheeze,Rhonchi,LS
+ls_F_W_RUA.wav,Wheeze,Wheezing,LS
+ls_M_PR_LLA.wav,Crackle,Pleural Rub,LS
+ls_M_PR_LMA.wav,Crackle,Pleural Rub,LS
+ls_M_R_RUA.wav,Wheeze,Rhonchi,LS
+ls_M_R_LUA.wav,Wheeze,Rhonchi,LS
+ls_F_PR_LMA.wav,Crackle,Pleural Rub,LS
+ls_M_W_RLA.wav,Wheeze,Wheezing,LS
+ls_M_R_RLA.wav,Wheeze,Rhonchi,LS
+ls_M_N_RMA.wav,Normal,Normal,LS
+ls_M_R_LMA.wav,Wheeze,Rhonchi,LS
+ls_F_R_LMA.wav,Wheeze,Rhonchi,LS
+ls_F_N_LLA.wav,Normal,Normal,LS
+ls_M_W_RUA.wav,Wheeze,Wheezing,LS
+ls_M_N_LMA.wav,Normal,Normal,LS
+ls_F_PR_LLA.wav,Crackle,Pleural Rub,LS
+ls_M_W_RMA.wav,Wheeze,Wheezing,LS
+ls_M_PR_RUA.wav,Crackle,Pleural Rub,LS
+ls_M_W_LLA.wav,Wheeze,Wheezing,LS
+ls_M_R_LLA.wav,Wheeze,Rhonchi,LS
+ls_F_N_RLA.wav,Normal,Normal,LS
+ls_M_W_LMA.wav,Wheeze,Wheezing,LS
+ls_F_N_RUA.wav,Normal,Normal,LS
+ls_M_PR_RLA.wav,Crackle,Pleural Rub,LS
+ls_F_PR_LUA.wav,Crackle,Pleural Rub,LS
+mix_M0001.wav,Wheeze,Rhonchi,Mix
+mix_M0002.wav,Normal,Normal,Mix
+mix_M0003.wav,Normal,Normal,Mix
+mix_M0004.wav,Crackle,Coarse Crackles,Mix
+mix_M0005.wav,Crackle,Fine Crackles,Mix
+mix_M0006.wav,Crackle,Pleural Rub,Mix
+mix_M0007.wav,Crackle,Pleural Rub,Mix
+mix_M0008.wav,Crackle,Pleural Rub,Mix
+mix_M0009.wav,Wheeze,Wheezing,Mix
+mix_M0010.wav,Crackle,Coarse Crackles,Mix
+mix_M0011.wav,Normal,Normal,Mix
+mix_M0012.wav,Wheeze,Rhonchi,Mix
+mix_M0013.wav,Crackle,Pleural Rub,Mix
+mix_M0014.wav,Wheeze,Rhonchi,Mix
+mix_M0015.wav,Crackle,Coarse Crackles,Mix
+mix_M0016.wav,Wheeze,Rhonchi,Mix
+mix_M0017.wav,Crackle,Coarse Crackles,Mix
+mix_M0018.wav,Wheeze,Wheezing,Mix
+mix_M0019.wav,Crackle,Pleural Rub,Mix
+mix_M0020.wav,Normal,Normal,Mix
+mix_M0021.wav,Crackle,Coarse Crackles,Mix
+mix_M0022.wav,Crackle,Fine Crackles,Mix
+mix_M0023.wav,Normal,Normal,Mix
+mix_M0024.wav,Wheeze,Wheezing,Mix
+mix_M0025.wav,Crackle,Pleural Rub,Mix
+mix_M0026.wav,Crackle,Pleural Rub,Mix
+mix_M0027.wav,Crackle,Coarse Crackles,Mix
+mix_M0028.wav,Crackle,Coarse Crackles,Mix
+mix_M0029.wav,Crackle,Pleural Rub,Mix
+mix_M0030.wav,Crackle,Pleural Rub,Mix
+mix_M0031.wav,Crackle,Fine Crackles,Mix
+mix_M0032.wav,Crackle,Pleural Rub,Mix
+mix_M0033.wav,Crackle,Fine Crackles,Mix
+mix_M0034.wav,Crackle,Coarse Crackles,Mix
+mix_M0035.wav,Crackle,Fine Crackles,Mix
+mix_M0036.wav,Normal,Normal,Mix
+mix_M0037.wav,Normal,Normal,Mix
+mix_M0038.wav,Normal,Normal,Mix
+mix_M0039.wav,Wheeze,Wheezing,Mix
+mix_M0040.wav,Wheeze,Rhonchi,Mix
+mix_M0041.wav,Normal,Normal,Mix
+mix_M0042.wav,Crackle,Coarse Crackles,Mix
+mix_M0043.wav,Crackle,Pleural Rub,Mix
+mix_M0044.wav,Crackle,Coarse Crackles,Mix
+mix_M0045.wav,Crackle,Fine Crackles,Mix
+mix_M0046.wav,Normal,Normal,Mix
+mix_M0047.wav,Wheeze,Rhonchi,Mix
+mix_M0048.wav,Wheeze,Wheezing,Mix
+mix_M0049.wav,Wheeze,Rhonchi,Mix
+mix_M0050.wav,Wheeze,Wheezing,Mix
+mix_M0051.wav,Normal,Normal,Mix
+mix_M0052.wav,Crackle,Pleural Rub,Mix
+mix_M0053.wav,Crackle,Coarse Crackles,Mix
+mix_M0054.wav,Wheeze,Wheezing,Mix
+mix_M0055.wav,Crackle,Fine Crackles,Mix
+mix_M0056.wav,Wheeze,Rhonchi,Mix
+mix_M0057.wav,Crackle,Coarse Crackles,Mix
+mix_M0058.wav,Wheeze,Rhonchi,Mix
+mix_M0059.wav,Crackle,Pleural Rub,Mix
+mix_M0060.wav,Wheeze,Wheezing,Mix
+mix_M0061.wav,Wheeze,Rhonchi,Mix
+mix_M0062.wav,Crackle,Coarse Crackles,Mix
+mix_M0063.wav,Crackle,Pleural Rub,Mix
+mix_M0064.wav,Crackle,Pleural Rub,Mix
+mix_M0065.wav,Crackle,Pleural Rub,Mix
+mix_M0066.wav,Normal,Normal,Mix
+mix_M0067.wav,Wheeze,Rhonchi,Mix
+mix_M0068.wav,Crackle,Fine Crackles,Mix
+mix_M0069.wav,Crackle,Coarse Crackles,Mix
+mix_M0070.wav,Normal,Normal,Mix
+mix_M0071.wav,Wheeze,Rhonchi,Mix
+mix_M0072.wav,Crackle,Pleural Rub,Mix
+mix_M0073.wav,Crackle,Pleural Rub,Mix
+mix_M0074.wav,Normal,Normal,Mix
+mix_M0075.wav,Crackle,Pleural Rub,Mix
+mix_M0076.wav,Crackle,Fine Crackles,Mix
+mix_M0077.wav,Wheeze,Rhonchi,Mix
+mix_M0078.wav,Normal,Normal,Mix
+mix_M0079.wav,Crackle,Coarse Crackles,Mix
+mix_M0080.wav,Crackle,Pleural Rub,Mix
+mix_M0081.wav,Wheeze,Wheezing,Mix
+mix_M0082.wav,Crackle,Fine Crackles,Mix
+mix_M0083.wav,Crackle,Pleural Rub,Mix
+mix_M0084.wav,Normal,Normal,Mix
+mix_M0085.wav,Wheeze,Rhonchi,Mix
+mix_M0086.wav,Wheeze,Wheezing,Mix
+mix_M0087.wav,Crackle,Coarse Crackles,Mix
+mix_M0088.wav,Wheeze,Rhonchi,Mix
+mix_M0089.wav,Wheeze,Wheezing,Mix
+mix_M0090.wav,Wheeze,Rhonchi,Mix
+mix_M0091.wav,Wheeze,Rhonchi,Mix
+mix_M0092.wav,Wheeze,Wheezing,Mix
+mix_M0093.wav,Crackle,Coarse Crackles,Mix
+mix_M0094.wav,Wheeze,Rhonchi,Mix
+mix_M0095.wav,Normal,Normal,Mix
+mix_M0096.wav,Wheeze,Rhonchi,Mix
+mix_M0097.wav,Crackle,Pleural Rub,Mix
+mix_M0098.wav,Wheeze,Wheezing,Mix
+mix_M0099.wav,Crackle,Fine Crackles,Mix
+mix_M0100.wav,Crackle,Coarse Crackles,Mix
+mix_M0101.wav,Wheeze,Wheezing,Mix
+mix_M0102.wav,Crackle,Pleural Rub,Mix
+mix_M0103.wav,Wheeze,Wheezing,Mix
+mix_M0104.wav,Crackle,Fine Crackles,Mix
+mix_M0105.wav,Wheeze,Wheezing,Mix
+mix_M0106.wav,Wheeze,Rhonchi,Mix
+mix_M0107.wav,Crackle,Pleural Rub,Mix
+mix_M0108.wav,Wheeze,Rhonchi,Mix
+mix_M0109.wav,Crackle,Fine Crackles,Mix
+mix_M0110.wav,Normal,Normal,Mix
+mix_M0111.wav,Crackle,Fine Crackles,Mix
+mix_M0112.wav,Crackle,Pleural Rub,Mix
+mix_M0113.wav,Wheeze,Rhonchi,Mix
+mix_M0114.wav,Wheeze,Wheezing,Mix
+mix_M0115.wav,Crackle,Fine Crackles,Mix
+mix_M0116.wav,Crackle,Coarse Crackles,Mix
+mix_M0117.wav,Wheeze,Rhonchi,Mix
+mix_M0118.wav,Crackle,Fine Crackles,Mix
+mix_M0119.wav,Wheeze,Wheezing,Mix
+mix_M0120.wav,Crackle,Fine Crackles,Mix
+mix_M0121.wav,Wheeze,Wheezing,Mix
+mix_M0122.wav,Normal,Normal,Mix
+mix_M0123.wav,Wheeze,Wheezing,Mix
+mix_M0124.wav,Wheeze,Wheezing,Mix
+mix_M0125.wav,Normal,Normal,Mix
+mix_M0126.wav,Crackle,Fine Crackles,Mix
+mix_M0127.wav,Wheeze,Wheezing,Mix
+mix_M0128.wav,Crackle,Fine Crackles,Mix
+mix_M0129.wav,Wheeze,Wheezing,Mix
+mix_M0130.wav,Normal,Normal,Mix
+mix_M0131.wav,Crackle,Fine Crackles,Mix
+mix_M0132.wav,Wheeze,Wheezing,Mix
+mix_M0133.wav,Crackle,Fine Crackles,Mix
+mix_M0134.wav,Normal,Normal,Mix
+mix_M0135.wav,Normal,Normal,Mix
+mix_M0136.wav,Wheeze,Wheezing,Mix
+mix_M0137.wav,Crackle,Fine Crackles,Mix
+mix_M0138.wav,Normal,Normal,Mix
+mix_M0139.wav,Wheeze,Wheezing,Mix
+mix_M0140.wav,Normal,Normal,Mix
+mix_M0141.wav,Wheeze,Wheezing,Mix
+mix_M0142.wav,Normal,Normal,Mix
+mix_M0143.wav,Wheeze,Wheezing,Mix
+mix_M0144.wav,Normal,Normal,Mix
+mix_M0145.wav,Normal,Normal,Mix
+mix_H0001.wav,Normal,Mixed,Mix_Extra
+mix_H0002.wav,Normal,Mixed,Mix_Extra
+mix_H0003.wav,Normal,Mixed,Mix_Extra
+mix_H0004.wav,Normal,Mixed,Mix_Extra
+mix_H0005.wav,Normal,Mixed,Mix_Extra
+mix_H0006.wav,Normal,Mixed,Mix_Extra
+mix_H0007.wav,Normal,Mixed,Mix_Extra
+mix_H0008.wav,Normal,Mixed,Mix_Extra
+mix_H0009.wav,Normal,Mixed,Mix_Extra
+mix_H0010.wav,Normal,Mixed,Mix_Extra
+mix_H0011.wav,Normal,Mixed,Mix_Extra
+mix_H0012.wav,Normal,Mixed,Mix_Extra
+mix_H0013.wav,Normal,Mixed,Mix_Extra
+mix_H0014.wav,Normal,Mixed,Mix_Extra
+mix_H0015.wav,Normal,Mixed,Mix_Extra
+mix_H0016.wav,Normal,Mixed,Mix_Extra
+mix_H0017.wav,Normal,Mixed,Mix_Extra
+mix_H0018.wav,Normal,Mixed,Mix_Extra
+mix_H0019.wav,Normal,Mixed,Mix_Extra
+mix_H0020.wav,Normal,Mixed,Mix_Extra
+mix_H0021.wav,Normal,Mixed,Mix_Extra
+mix_H0022.wav,Normal,Mixed,Mix_Extra
+mix_H0023.wav,Normal,Mixed,Mix_Extra
+mix_H0024.wav,Normal,Mixed,Mix_Extra
+mix_H0025.wav,Normal,Mixed,Mix_Extra
+mix_H0026.wav,Normal,Mixed,Mix_Extra
+mix_H0027.wav,Normal,Mixed,Mix_Extra
+mix_H0028.wav,Normal,Mixed,Mix_Extra
+mix_H0029.wav,Normal,Mixed,Mix_Extra
+mix_H0030.wav,Normal,Mixed,Mix_Extra
+mix_H0031.wav,Normal,Mixed,Mix_Extra
+mix_H0032.wav,Normal,Mixed,Mix_Extra
+mix_H0033.wav,Normal,Mixed,Mix_Extra
+mix_H0034.wav,Normal,Mixed,Mix_Extra
+mix_H0035.wav,Normal,Mixed,Mix_Extra
+mix_H0036.wav,Normal,Mixed,Mix_Extra
+mix_H0037.wav,Normal,Mixed,Mix_Extra
+mix_H0038.wav,Normal,Mixed,Mix_Extra
+mix_H0039.wav,Normal,Mixed,Mix_Extra
+mix_H0040.wav,Normal,Mixed,Mix_Extra
+mix_H0041.wav,Normal,Mixed,Mix_Extra
+mix_H0042.wav,Normal,Mixed,Mix_Extra
+mix_H0043.wav,Normal,Mixed,Mix_Extra
+mix_H0044.wav,Normal,Mixed,Mix_Extra
+mix_H0045.wav,Normal,Mixed,Mix_Extra
+mix_H0046.wav,Normal,Mixed,Mix_Extra
+mix_H0047.wav,Normal,Mixed,Mix_Extra
+mix_H0048.wav,Normal,Mixed,Mix_Extra
+mix_H0049.wav,Normal,Mixed,Mix_Extra
+mix_H0050.wav,Normal,Mixed,Mix_Extra
+mix_H0051.wav,Normal,Mixed,Mix_Extra
+mix_H0052.wav,Normal,Mixed,Mix_Extra
+mix_H0053.wav,Normal,Mixed,Mix_Extra
+mix_H0054.wav,Normal,Mixed,Mix_Extra
+mix_H0055.wav,Normal,Mixed,Mix_Extra
+mix_H0056.wav,Normal,Mixed,Mix_Extra
+mix_H0057.wav,Normal,Mixed,Mix_Extra
+mix_H0058.wav,Normal,Mixed,Mix_Extra
+mix_H0059.wav,Normal,Mixed,Mix_Extra
+mix_H0060.wav,Normal,Mixed,Mix_Extra
+mix_H0061.wav,Normal,Mixed,Mix_Extra
+mix_H0062.wav,Normal,Mixed,Mix_Extra
+mix_H0063.wav,Normal,Mixed,Mix_Extra
+mix_H0064.wav,Normal,Mixed,Mix_Extra
+mix_H0065.wav,Normal,Mixed,Mix_Extra
+mix_H0066.wav,Normal,Mixed,Mix_Extra
+mix_H0067.wav,Normal,Mixed,Mix_Extra
+mix_H0068.wav,Normal,Mixed,Mix_Extra
+mix_H0069.wav,Normal,Mixed,Mix_Extra
+mix_H0070.wav,Normal,Mixed,Mix_Extra
+mix_H0071.wav,Normal,Mixed,Mix_Extra
+mix_H0072.wav,Normal,Mixed,Mix_Extra
+mix_H0073.wav,Normal,Mixed,Mix_Extra
+mix_H0074.wav,Normal,Mixed,Mix_Extra
+mix_H0075.wav,Normal,Mixed,Mix_Extra
+mix_H0076.wav,Normal,Mixed,Mix_Extra
+mix_H0077.wav,Normal,Mixed,Mix_Extra
+mix_H0078.wav,Normal,Mixed,Mix_Extra
+mix_H0079.wav,Normal,Mixed,Mix_Extra
+mix_H0080.wav,Normal,Mixed,Mix_Extra
+mix_H0081.wav,Normal,Mixed,Mix_Extra
+mix_H0082.wav,Normal,Mixed,Mix_Extra
+mix_H0083.wav,Normal,Mixed,Mix_Extra
+mix_H0084.wav,Normal,Mixed,Mix_Extra
+mix_H0085.wav,Normal,Mixed,Mix_Extra
+mix_H0086.wav,Normal,Mixed,Mix_Extra
+mix_H0087.wav,Normal,Mixed,Mix_Extra
+mix_H0088.wav,Normal,Mixed,Mix_Extra
+mix_H0089.wav,Normal,Mixed,Mix_Extra
+mix_H0090.wav,Normal,Mixed,Mix_Extra
+mix_H0091.wav,Normal,Mixed,Mix_Extra
+mix_H0092.wav,Normal,Mixed,Mix_Extra
+mix_H0093.wav,Normal,Mixed,Mix_Extra
+mix_H0094.wav,Normal,Mixed,Mix_Extra
+mix_H0095.wav,Normal,Mixed,Mix_Extra
+mix_H0096.wav,Normal,Mixed,Mix_Extra
+mix_H0097.wav,Normal,Mixed,Mix_Extra
+mix_H0098.wav,Normal,Mixed,Mix_Extra
+mix_H0099.wav,Normal,Mixed,Mix_Extra
+mix_H0100.wav,Normal,Mixed,Mix_Extra
+mix_H0101.wav,Normal,Mixed,Mix_Extra
+mix_H0102.wav,Normal,Mixed,Mix_Extra
+mix_H0103.wav,Normal,Mixed,Mix_Extra
+mix_H0104.wav,Normal,Mixed,Mix_Extra
+mix_H0105.wav,Normal,Mixed,Mix_Extra
+mix_H0106.wav,Normal,Mixed,Mix_Extra
+mix_H0107.wav,Normal,Mixed,Mix_Extra
+mix_H0108.wav,Normal,Mixed,Mix_Extra
+mix_H0109.wav,Normal,Mixed,Mix_Extra
+mix_H0110.wav,Normal,Mixed,Mix_Extra
+mix_H0111.wav,Normal,Mixed,Mix_Extra
+mix_H0112.wav,Normal,Mixed,Mix_Extra
+mix_H0113.wav,Normal,Mixed,Mix_Extra
+mix_H0114.wav,Normal,Mixed,Mix_Extra
+mix_H0115.wav,Normal,Mixed,Mix_Extra
+mix_H0116.wav,Normal,Mixed,Mix_Extra
+mix_H0117.wav,Normal,Mixed,Mix_Extra
+mix_H0118.wav,Normal,Mixed,Mix_Extra
+mix_H0119.wav,Normal,Mixed,Mix_Extra
+mix_H0120.wav,Normal,Mixed,Mix_Extra
+mix_H0121.wav,Normal,Mixed,Mix_Extra
+mix_H0122.wav,Normal,Mixed,Mix_Extra
+mix_H0123.wav,Normal,Mixed,Mix_Extra
+mix_H0124.wav,Normal,Mixed,Mix_Extra
+mix_H0125.wav,Normal,Mixed,Mix_Extra
+mix_H0126.wav,Normal,Mixed,Mix_Extra
+mix_H0127.wav,Normal,Mixed,Mix_Extra
+mix_H0128.wav,Normal,Mixed,Mix_Extra
+mix_H0129.wav,Normal,Mixed,Mix_Extra
+mix_H0130.wav,Normal,Mixed,Mix_Extra
+mix_H0131.wav,Normal,Mixed,Mix_Extra
+mix_H0132.wav,Normal,Mixed,Mix_Extra
+mix_H0133.wav,Normal,Mixed,Mix_Extra
+mix_H0134.wav,Normal,Mixed,Mix_Extra
+mix_H0135.wav,Normal,Mixed,Mix_Extra
+mix_H0136.wav,Normal,Mixed,Mix_Extra
+mix_H0137.wav,Normal,Mixed,Mix_Extra
+mix_H0138.wav,Normal,Mixed,Mix_Extra
+mix_H0139.wav,Normal,Mixed,Mix_Extra
+mix_H0140.wav,Normal,Mixed,Mix_Extra
+mix_H0141.wav,Normal,Mixed,Mix_Extra
+mix_H0142.wav,Normal,Mixed,Mix_Extra
+mix_H0143.wav,Normal,Mixed,Mix_Extra
+mix_H0144.wav,Normal,Mixed,Mix_Extra
+mix_H0145.wav,Normal,Mixed,Mix_Extra
+mix_L0001.wav,Normal,Mixed,Mix_Extra
+mix_L0002.wav,Normal,Mixed,Mix_Extra
+mix_L0003.wav,Normal,Mixed,Mix_Extra
+mix_L0004.wav,Normal,Mixed,Mix_Extra
+mix_L0005.wav,Normal,Mixed,Mix_Extra
+mix_L0006.wav,Normal,Mixed,Mix_Extra
+mix_L0007.wav,Normal,Mixed,Mix_Extra
+mix_L0008.wav,Normal,Mixed,Mix_Extra
+mix_L0009.wav,Normal,Mixed,Mix_Extra
+mix_L0010.wav,Normal,Mixed,Mix_Extra
+mix_L0011.wav,Normal,Mixed,Mix_Extra
+mix_L0012.wav,Normal,Mixed,Mix_Extra
+mix_L0013.wav,Normal,Mixed,Mix_Extra
+mix_L0014.wav,Normal,Mixed,Mix_Extra
+mix_L0015.wav,Normal,Mixed,Mix_Extra
+mix_L0016.wav,Normal,Mixed,Mix_Extra
+mix_L0017.wav,Normal,Mixed,Mix_Extra
+mix_L0018.wav,Normal,Mixed,Mix_Extra
+mix_L0019.wav,Normal,Mixed,Mix_Extra
+mix_L0020.wav,Normal,Mixed,Mix_Extra
+mix_L0021.wav,Normal,Mixed,Mix_Extra
+mix_L0022.wav,Normal,Mixed,Mix_Extra
+mix_L0023.wav,Normal,Mixed,Mix_Extra
+mix_L0024.wav,Normal,Mixed,Mix_Extra
+mix_L0025.wav,Normal,Mixed,Mix_Extra
+mix_L0026.wav,Normal,Mixed,Mix_Extra
+mix_L0027.wav,Normal,Mixed,Mix_Extra
+mix_L0028.wav,Normal,Mixed,Mix_Extra
+mix_L0029.wav,Normal,Mixed,Mix_Extra
+mix_L0030.wav,Normal,Mixed,Mix_Extra
+mix_L0031.wav,Normal,Mixed,Mix_Extra
+mix_L0032.wav,Normal,Mixed,Mix_Extra
+mix_L0033.wav,Normal,Mixed,Mix_Extra
+mix_L0034.wav,Normal,Mixed,Mix_Extra
+mix_L0035.wav,Normal,Mixed,Mix_Extra
+mix_L0036.wav,Normal,Mixed,Mix_Extra
+mix_L0037.wav,Normal,Mixed,Mix_Extra
+mix_L0038.wav,Normal,Mixed,Mix_Extra
+mix_L0039.wav,Normal,Mixed,Mix_Extra
+mix_L0040.wav,Normal,Mixed,Mix_Extra
+mix_L0041.wav,Normal,Mixed,Mix_Extra
+mix_L0042.wav,Normal,Mixed,Mix_Extra
+mix_L0043.wav,Normal,Mixed,Mix_Extra
+mix_L0044.wav,Normal,Mixed,Mix_Extra
+mix_L0045.wav,Normal,Mixed,Mix_Extra
+mix_L0046.wav,Normal,Mixed,Mix_Extra
+mix_L0047.wav,Normal,Mixed,Mix_Extra
+mix_L0048.wav,Normal,Mixed,Mix_Extra
+mix_L0049.wav,Normal,Mixed,Mix_Extra
+mix_L0050.wav,Normal,Mixed,Mix_Extra
+mix_L0051.wav,Normal,Mixed,Mix_Extra
+mix_L0052.wav,Normal,Mixed,Mix_Extra
+mix_L0053.wav,Normal,Mixed,Mix_Extra
+mix_L0054.wav,Normal,Mixed,Mix_Extra
+mix_L0055.wav,Normal,Mixed,Mix_Extra
+mix_L0056.wav,Normal,Mixed,Mix_Extra
+mix_L0057.wav,Normal,Mixed,Mix_Extra
+mix_L0058.wav,Normal,Mixed,Mix_Extra
+mix_L0059.wav,Normal,Mixed,Mix_Extra
+mix_L0060.wav,Normal,Mixed,Mix_Extra
+mix_L0061.wav,Normal,Mixed,Mix_Extra
+mix_L0062.wav,Normal,Mixed,Mix_Extra
+mix_L0063.wav,Normal,Mixed,Mix_Extra
+mix_L0064.wav,Normal,Mixed,Mix_Extra
+mix_L0065.wav,Normal,Mixed,Mix_Extra
+mix_L0066.wav,Normal,Mixed,Mix_Extra
+mix_L0067.wav,Normal,Mixed,Mix_Extra
+mix_L0068.wav,Normal,Mixed,Mix_Extra
+mix_L0069.wav,Normal,Mixed,Mix_Extra
+mix_L0070.wav,Normal,Mixed,Mix_Extra
+mix_L0071.wav,Normal,Mixed,Mix_Extra
+mix_L0072.wav,Normal,Mixed,Mix_Extra
+mix_L0073.wav,Normal,Mixed,Mix_Extra
+mix_L0074.wav,Normal,Mixed,Mix_Extra
+mix_L0075.wav,Normal,Mixed,Mix_Extra
+mix_L0076.wav,Normal,Mixed,Mix_Extra
+mix_L0077.wav,Normal,Mixed,Mix_Extra
+mix_L0078.wav,Normal,Mixed,Mix_Extra
+mix_L0079.wav,Normal,Mixed,Mix_Extra
+mix_L0080.wav,Normal,Mixed,Mix_Extra
+mix_L0081.wav,Normal,Mixed,Mix_Extra
+mix_L0082.wav,Normal,Mixed,Mix_Extra
+mix_L0083.wav,Normal,Mixed,Mix_Extra
+mix_L0084.wav,Normal,Mixed,Mix_Extra
+mix_L0085.wav,Normal,Mixed,Mix_Extra
+mix_L0086.wav,Normal,Mixed,Mix_Extra
+mix_L0087.wav,Normal,Mixed,Mix_Extra
+mix_L0088.wav,Normal,Mixed,Mix_Extra
+mix_L0089.wav,Normal,Mixed,Mix_Extra
+mix_L0090.wav,Normal,Mixed,Mix_Extra
+mix_L0091.wav,Normal,Mixed,Mix_Extra
+mix_L0092.wav,Normal,Mixed,Mix_Extra
+mix_L0093.wav,Normal,Mixed,Mix_Extra
+mix_L0094.wav,Normal,Mixed,Mix_Extra
+mix_L0095.wav,Normal,Mixed,Mix_Extra
+mix_L0096.wav,Normal,Mixed,Mix_Extra
+mix_L0097.wav,Normal,Mixed,Mix_Extra
+mix_L0098.wav,Normal,Mixed,Mix_Extra
+mix_L0099.wav,Normal,Mixed,Mix_Extra
+mix_L0100.wav,Normal,Mixed,Mix_Extra
+mix_L0101.wav,Normal,Mixed,Mix_Extra
+mix_L0102.wav,Normal,Mixed,Mix_Extra
+mix_L0103.wav,Normal,Mixed,Mix_Extra
+mix_L0104.wav,Normal,Mixed,Mix_Extra
+mix_L0105.wav,Normal,Mixed,Mix_Extra
+mix_L0106.wav,Normal,Mixed,Mix_Extra
+mix_L0107.wav,Normal,Mixed,Mix_Extra
+mix_L0108.wav,Normal,Mixed,Mix_Extra
+mix_L0109.wav,Normal,Mixed,Mix_Extra
+mix_L0110.wav,Normal,Mixed,Mix_Extra
+mix_L0111.wav,Normal,Mixed,Mix_Extra
+mix_L0112.wav,Normal,Mixed,Mix_Extra
+mix_L0113.wav,Normal,Mixed,Mix_Extra
+mix_L0114.wav,Normal,Mixed,Mix_Extra
+mix_L0115.wav,Normal,Mixed,Mix_Extra
+mix_L0116.wav,Normal,Mixed,Mix_Extra
+mix_L0117.wav,Normal,Mixed,Mix_Extra
+mix_L0118.wav,Normal,Mixed,Mix_Extra
+mix_L0119.wav,Normal,Mixed,Mix_Extra
+mix_L0120.wav,Normal,Mixed,Mix_Extra
+mix_L0121.wav,Normal,Mixed,Mix_Extra
+mix_L0122.wav,Normal,Mixed,Mix_Extra
+mix_L0123.wav,Normal,Mixed,Mix_Extra
+mix_L0124.wav,Normal,Mixed,Mix_Extra
+mix_L0125.wav,Normal,Mixed,Mix_Extra
+mix_L0126.wav,Normal,Mixed,Mix_Extra
+mix_L0127.wav,Normal,Mixed,Mix_Extra
+mix_L0128.wav,Normal,Mixed,Mix_Extra
+mix_L0129.wav,Normal,Mixed,Mix_Extra
+mix_L0130.wav,Normal,Mixed,Mix_Extra
+mix_L0131.wav,Normal,Mixed,Mix_Extra
+mix_L0132.wav,Normal,Mixed,Mix_Extra
+mix_L0133.wav,Normal,Mixed,Mix_Extra
+mix_L0134.wav,Normal,Mixed,Mix_Extra
+mix_L0135.wav,Normal,Mixed,Mix_Extra
+mix_L0136.wav,Normal,Mixed,Mix_Extra
+mix_L0137.wav,Normal,Mixed,Mix_Extra
+mix_L0138.wav,Normal,Mixed,Mix_Extra
+mix_L0139.wav,Normal,Mixed,Mix_Extra
+mix_L0140.wav,Normal,Mixed,Mix_Extra
+mix_L0141.wav,Normal,Mixed,Mix_Extra
+mix_L0142.wav,Normal,Mixed,Mix_Extra
+mix_L0143.wav,Normal,Mixed,Mix_Extra
+mix_L0144.wav,Normal,Mixed,Mix_Extra
+mix_L0145.wav,Normal,Mixed,Mix_Extra

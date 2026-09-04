@@ -8,3 +8,6 @@ pandas
 scikit-learn
 pillow
 soundfile
+python-dotenv
+groq
+google-genai

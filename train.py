@@ -5,16 +5,19 @@ import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, models, transforms
 from torch.utils.data import DataLoader
+import numpy as np
 
-def train_model(data_dir="dataset_spectrograms", num_epochs=15, batch_size=16, lr=0.0003):
+def train_model(data_dir="dataset_spectrograms", num_epochs=25, batch_size=16, lr=0.0005):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
-    # Standard ResNet-18 normalization and augmentations
+    # Advanced Data Augmentations for Crackle & Wheeze pattern enhancement
     data_transforms = {
         'train': transforms.Compose([
             transforms.Resize((224, 224)),
-            transforms.RandomHorizontalFlip(),
+            transforms.RandomHorizontalFlip(p=0.5),
+            transforms.RandomRotation(15),
+            transforms.ColorJitter(brightness=0.2, contrast=0.2),
             transforms.ToTensor(),
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ]),
@@ -38,14 +41,26 @@ def train_model(data_dir="dataset_spectrograms", num_epochs=15, batch_size=16, l
     num_classes = len(class_names)
     print(f"Detected classes: {class_names}")
 
+    # Explicit class weight boost for Crackle (idx 0) and Wheeze (idx 2)
+    # Class order: ['Crackle', 'Normal', 'Wheeze']
+    class_weights = [6.0, 1.0, 4.0]
+    class_weights_tensor = torch.FloatTensor(class_weights).to(device)
+    print(f"Applied Class Weights: {dict(zip(class_names, class_weights))}")
+
     # Load pre-trained ResNet-18
     model = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
     num_ftrs = model.fc.in_features
-    model.fc = nn.Linear(num_ftrs, num_classes)
+    
+    # Enhanced Classifier Head with Dropout for better generalization
+    model.fc = nn.Sequential(
+        nn.Dropout(0.3),
+        nn.Linear(num_ftrs, num_classes)
+    )
     model = model.to(device)
 
-    criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=lr)
+    criterion = nn.CrossEntropyLoss(weight=class_weights_tensor)
+    optimizer = optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
+    scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=num_epochs)
 
     best_acc = -1.0
 
@@ -76,6 +91,9 @@ def train_model(data_dir="dataset_spectrograms", num_epochs=15, batch_size=16, l
                 running_loss += loss.item() * inputs.size(0)
                 running_corrects += torch.sum(preds == labels.data)
 
+            if phase == 'train':
+                scheduler.step()
+
             epoch_loss = running_loss / len(image_datasets[phase])
             epoch_acc = running_corrects.double() / len(image_datasets[phase])
 
@@ -92,9 +110,9 @@ def train_model(data_dir="dataset_spectrograms", num_epochs=15, batch_size=16, l
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train ResNet-18 NICU Classifier")
-    parser.add_argument("--epochs", type=int, default=15, help="Number of training epochs")
+    parser.add_argument("--epochs", type=int, default=25, help="Number of training epochs")
     parser.add_argument("--batch_size", type=int, default=16, help="Batch size")
-    parser.add_argument("--lr", type=float, default=0.0003, help="Learning rate")
+    parser.add_argument("--lr", type=float, default=0.0005, help="Learning rate")
     args = parser.parse_args()
 
     train_model(num_epochs=args.epochs, batch_size=args.batch_size, lr=args.lr)

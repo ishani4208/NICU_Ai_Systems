@@ -25,7 +25,7 @@ class NICUClassifier:
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ])
 
-    def predict(self, audio_path, temp_spec_dir="temp_specs"):
+    def predict(self, audio_path, temp_spec_dir="temp_specs", generate_report=False, rag_context="", provider="groq"):
         os.makedirs(temp_spec_dir, exist_ok=True)
         spec_path = os.path.join(temp_spec_dir, "temp_mel.png")
         
@@ -44,12 +44,19 @@ class NICUClassifier:
         predicted_class = self.classes[pred_idx.item()]
         confidence_val = float(confidence.item())
 
-        return {
+        res = {
             "predicted_class": predicted_class,
             "confidence": confidence_val,
             "spectrogram_path": spec_path,
             "all_probabilities": {self.classes[i]: float(probs[i]) for i in range(len(self.classes))}
         }
+
+        if generate_report:
+            from utils import generate_clinical_report
+            res["clinical_report"] = generate_clinical_report(predicted_class, confidence_val, rag_context=rag_context, provider=provider)
+
+        return res
+
 
 # Quick test helper
 if __name__ == "__main__":

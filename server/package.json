@@ -1,0 +1,20 @@
+{
+  "name": "nicu-ai-server",
+  "version": "1.0.0",
+  "description": "Express API bridging the React dashboard to the NICU AI Python inference pipeline",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "multer": "^2.4.0",
+    "uuid": "^11.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

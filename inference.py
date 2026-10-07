@@ -14,8 +14,13 @@ class NICUClassifier:
         
         self.classes = checkpoint['classes']
         self.model = models.resnet18(weights=None)
-        self.model.fc = nn.Linear(self.model.fc.in_features, len(self.classes))
+        num_ftrs = self.model.fc.in_features
+        self.model.fc = nn.Sequential(
+            nn.Dropout(0.3),
+            nn.Linear(num_ftrs, len(self.classes))
+        )
         self.model.load_state_dict(checkpoint['model_state_dict'])
+
         self.model = self.model.to(self.device)
         self.model.eval()
 

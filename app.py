@@ -12,7 +12,7 @@ from utils import generate_clinical_report_stream, generate_clinical_report
 # --- Streamlit Page Configuration ---
 st.set_page_config(
     page_title="NeoListen AI | NICU Respiratory Diagnostic System",
-    page_icon="🫁",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -105,13 +105,13 @@ except Exception as e:
 # --- Header ---
 st.markdown("""
 <div class="main-header">
-    <div class="title-text">🫁 NeoListen AI System</div>
+    <div class="title-text">NeoListen AI System</div>
     <div class="subtitle-text">Neonatal Intensive Care Unit (NICU) Respiratory Sound Classifier & Decision Support Engine</div>
 </div>
 """, unsafe_allow_html=True)
 
 # --- Sidebar Inputs ---
-st.sidebar.header("📁 Audio Input & Controls")
+st.sidebar.header("Audio Input & Controls")
 
 input_mode = st.sidebar.radio(
     "Choose Audio Input Method:",
@@ -141,7 +141,7 @@ else:
             f.write(uploaded_file.getbuffer())
 
 st.sidebar.divider()
-st.sidebar.header("⚙️ Clinical Report Settings")
+st.sidebar.header("Clinical Report Settings")
 provider = st.sidebar.selectbox("LLM Report Provider:", ["groq", "gemini"])
 rag_context = st.sidebar.text_area("Optional RAG Clinical Context:", "", placeholder="Enter patient history or clinical notes...")
 
@@ -150,7 +150,7 @@ if audio_file_path and os.path.exists(audio_file_path):
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        st.subheader("🔊 Audio Signal & Spectrogram")
+        st.subheader("Audio Signal & Spectrogram")
         st.audio(audio_file_path)
 
         with st.spinner("Processing Butterworth Bandpass Filter (100Hz - 2000Hz)..."):
@@ -162,7 +162,7 @@ if audio_file_path and os.path.exists(audio_file_path):
             st.image(spec_img, use_container_width=True)
 
     with col2:
-        st.subheader("🎯 Diagnostic Classification")
+        st.subheader("Diagnostic Classification")
 
         pred_class = res["predicted_class"]
         conf_pct = res["confidence"] * 100.0
@@ -187,9 +187,9 @@ if audio_file_path and os.path.exists(audio_file_path):
     st.divider()
 
     # --- Clinical Decision Support LLM Report ---
-    st.subheader("📄 AI Clinical Decision Support Report")
+    st.subheader("AI Clinical Decision Support Report")
 
-    if st.button("🚀 Generate Clinical Report", type="primary"):
+    if st.button("Generate Clinical Report", type="primary"):
         report_placeholder = st.empty()
         full_report = ""
 
@@ -199,4 +199,4 @@ if audio_file_path and os.path.exists(audio_file_path):
                 report_placeholder.markdown(f'<div class="report-box">{full_report}</div>', unsafe_allow_html=True)
 
 else:
-    st.info("👈 Please select a preset demo sound or upload an audio file from the sidebar to begin analysis.")
+    st.info("Select a preset demo sound or upload an audio file from the sidebar to begin analysis.")

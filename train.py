@@ -5,13 +5,11 @@ import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, models, transforms
 from torch.utils.data import DataLoader
-import numpy as np
 
-def train_model(data_dir="dataset_spectrograms", num_epochs=25, batch_size=16, lr=0.0005):
+def train_model(data_dir="dataset_spectrograms", num_epochs=25, batch_size=16, lr=0.0003):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
-    # Advanced Data Augmentations for Crackle & Wheeze pattern enhancement
     data_transforms = {
         'train': transforms.Compose([
             transforms.Resize((224, 224)),
@@ -32,7 +30,7 @@ def train_model(data_dir="dataset_spectrograms", num_epochs=25, batch_size=16, l
     val_path = os.path.join(data_dir, 'val')
 
     if not os.path.exists(train_path) or not os.path.exists(val_path):
-        raise FileNotFoundError(f"Dataset directories '{train_path}' or '{val_path}' do not exist. Please run preprocess.py first.")
+        raise FileNotFoundError(f"Dataset directories '{train_path}' or '{val_path}' do not exist.")
 
     image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x), data_transforms[x]) for x in ['train', 'val']}
     dataloaders = {x: DataLoader(image_datasets[x], batch_size=batch_size, shuffle=(x == 'train')) for x in ['train', 'val']}
@@ -41,17 +39,13 @@ def train_model(data_dir="dataset_spectrograms", num_epochs=25, batch_size=16, l
     num_classes = len(class_names)
     print(f"Detected classes: {class_names}")
 
-    # Explicit class weight boost for Crackle (idx 0) and Wheeze (idx 2)
-    # Class order: ['Crackle', 'Normal', 'Wheeze']
+    # Heavy penalty boost for Crackle (idx 0: Crackle, idx 1: Normal, idx 2: Wheeze)
     class_weights = [6.0, 1.0, 4.0]
     class_weights_tensor = torch.FloatTensor(class_weights).to(device)
     print(f"Applied Class Weights: {dict(zip(class_names, class_weights))}")
 
-    # Load pre-trained ResNet-18
     model = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
     num_ftrs = model.fc.in_features
-    
-    # Enhanced Classifier Head with Dropout for better generalization
     model.fc = nn.Sequential(
         nn.Dropout(0.3),
         nn.Linear(num_ftrs, num_classes)
@@ -101,18 +95,23 @@ def train_model(data_dir="dataset_spectrograms", num_epochs=25, batch_size=16, l
 
             if phase == 'val' and epoch_acc >= best_acc:
                 best_acc = epoch_acc
+                tmp_path = 'resnet18_nicu_tmp.pth'
                 torch.save({
                     'model_state_dict': model.state_dict(),
                     'classes': class_names
-                }, 'resnet18_nicu.pth')
+                }, tmp_path)
+                try:
+                    os.replace(tmp_path, 'resnet18_nicu.pth')
+                except Exception:
+                    pass
 
     print(f"Training Complete. Best Validation Accuracy: {best_acc:.4f}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train ResNet-18 NICU Classifier")
-    parser.add_argument("--epochs", type=int, default=25, help="Number of training epochs")
+    parser.add_argument("--epochs", type=int, default=20, help="Number of training epochs")
     parser.add_argument("--batch_size", type=int, default=16, help="Batch size")
-    parser.add_argument("--lr", type=float, default=0.0005, help="Learning rate")
+    parser.add_argument("--lr", type=float, default=0.0003, help="Learning rate")
     args = parser.parse_args()
 
     train_model(num_epochs=args.epochs, batch_size=args.batch_size, lr=args.lr)

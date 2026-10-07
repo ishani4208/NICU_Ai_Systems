@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchRecords } from "../api.js";
 import ClassificationBadge from "../components/ClassificationBadge.jsx";
+import { SearchIcon } from "../components/Icons.jsx";
 
 export default function History() {
   const [query, setQuery] = useState("");
@@ -43,7 +44,8 @@ export default function History() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <button type="submit" className="secondary">
+          <button type="submit" className="secondary" style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+            <SearchIcon size={16} />
             Search
           </button>
         </form>

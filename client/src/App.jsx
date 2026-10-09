@@ -12,7 +12,7 @@ export default function App() {
           <div className="brand-mark">
             <BrandIcon size={16} />
           </div>
-          <span>NeoListen AI</span>
+          <span>NICU AI</span>
         </div>
 
         <div className="header-actions">

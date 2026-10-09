@@ -158,7 +158,7 @@ export default function Dashboard() {
       <main className="results-panel">
         <div className="hero-card">
           <div>
-            <h1>NeoListen AI System</h1>
+            <h1>NICU AI System</h1>
             <p>Neonatal Intensive Care Unit (NICU) Respiratory Sound Classifier &amp; Decision Support Engine</p>
           </div>
         </div>

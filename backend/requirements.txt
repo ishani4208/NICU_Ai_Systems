@@ -1,0 +1,15 @@
+torch
+torchvision
+torchaudio
+librosa
+scipy
+matplotlib
+pandas
+scikit-learn
+pillow
+soundfile
+python-dotenv
+groq
+google-genai
+streamlit
+openai

@@ -53,9 +53,17 @@ Run all Python scripts from `backend/` (they use paths relative to it).
 - At least one LLM API key for AI reports (optional: without any key, the app
   falls back to a fixed template report)
 
+On macOS, install the tools with Homebrew if you do not have them:
+`brew install python node`.
+
+Commands below are given for **Windows (PowerShell)** and **macOS / Linux
+(Terminal)**. Use the block for your system.
+
 ## First-time setup
 
 Run these from the repository root.
+
+**Windows (PowerShell)**
 
 ```powershell
 # 1. Python environment
@@ -72,16 +80,30 @@ cd ..\..\frontend
 npm install
 ```
 
-Create `backend/.env` with your keys (all optional, add the ones you have):
+**macOS / Linux (Terminal)**
+
+```bash
+# 1. Python environment
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r backend/requirements.txt
+
+# 2. API server dependencies
+cd backend/server
+npm install
+
+# 3. Frontend dependencies
+cd ../../frontend
+npm install
+```
+
+Create `backend/.env` with your keys (all optional, add the ones you have).
+On Windows use `notepad backend\.env`; on macOS use `nano backend/.env`.
 
 ```
 GEMINI_API_KEY=...
 GROQ_API_KEY=...
 OPENROUTER_API_KEY=...
-
-# Optional, only for the local Ollama provider
-OLLAMA_MODEL=llama3.2:3b
-OLLAMA_BASE_URL=http://localhost:11434/v1
 ```
 
 Make sure `backend/resnet18_nicu.pth` exists (it is in the repository).
@@ -92,27 +114,49 @@ Use two terminals, both starting from the repository root.
 
 **Terminal 1 — API server (http://localhost:5000)**
 
+Windows (PowerShell):
+
 ```powershell
 cd backend\server
 $env:PYTHON_BIN = (Resolve-Path "..\..\.venv\Scripts\python.exe").Path
 npm start
 ```
 
+macOS / Linux:
+
+```bash
+cd backend/server
+export PYTHON_BIN="$(cd ../.. && pwd)/.venv/bin/python"
+npm start
+```
+
 `PYTHON_BIN` must point at the virtual environment's Python. Otherwise the
 server runs the system `python`, which does not have PyTorch.
 
+> **macOS:** since macOS Monterey, the AirPlay Receiver uses port 5000, so the
+> server may fail to start or answer with 403. Either turn it off in System
+> Settings → General → AirDrop & Handoff → AirPlay Receiver, or use another
+> port for both the server and the frontend:
+>
+> ```bash
+> # Terminal 1
+> PORT=5001 npm start
+> # Terminal 2
+> API_PORT=5001 npm run dev
+> ```
+
 **Terminal 2 — Frontend**
 
-```powershell
+```bash
 cd frontend
 npm run dev
 ```
 
 Open the address Vite prints, usually http://localhost:5173. If that port is
 taken, Vite picks the next free one and prints it. The frontend proxies `/api`
-and `/storage` to port 5000.
+and `/storage` to port 5000 (or `API_PORT` if set).
 
-If PowerShell blocks `npm`, use `npm.cmd` instead.
+On Windows, if PowerShell blocks `npm`, use `npm.cmd` instead.
 
 ### Using the app
 
@@ -127,8 +171,18 @@ Sample audio from the test split is in `backend/dataset/test_audio/`.
 
 ### Streamlit demo (optional)
 
+Windows (PowerShell):
+
 ```powershell
 .\.venv\Scripts\Activate.ps1
+cd backend
+streamlit run app.py
+```
+
+macOS / Linux:
+
+```bash
+source .venv/bin/activate
 cd backend
 streamlit run app.py
 ```
@@ -144,33 +198,26 @@ If you pick one provider, it is tried first and the rest follow.
 | Gemini | `GEMINI_API_KEY` | Models `gemini-3.6-flash`, `gemini-3.5-flash-lite`, `gemini-3.8-flash` |
 | Groq | `GROQ_API_KEY` | Models `llama-3.3-70b-versatile`, `openai/gpt-oss-120b` |
 | OpenRouter | `OPENROUTER_API_KEY` | Uses `openrouter/free`; free tier is limited per day |
-| Ollama (local) | Ollama installed and a model pulled | Only runs when selected; never part of Auto |
 | Template only | nothing | Fixed text from the class and confidence, no AI |
 
 Providers without a key are skipped, and failures are printed in the API
 server terminal. Each report records which model wrote it.
 
-**Ollama:** it must be installed on the machine that runs the backend.
-
-```powershell
-winget install Ollama.Ollama
-ollama pull llama3.2:3b
-```
-
-Ollama serves on `http://localhost:11434` automatically. Use `OLLAMA_MODEL` and
-`OLLAMA_BASE_URL` in `backend/.env` to change the model or point to another
-machine.
-
 ## Retrain and evaluate
 
-```powershell
-.\.venv\Scripts\Activate.ps1
+Activate the virtual environment first (`.\.venv\Scripts\Activate.ps1` on
+Windows, `source .venv/bin/activate` on macOS / Linux), then:
+
+```bash
 cd backend
 python preprocess.py          # spectrograms + grouped train/val/test split
 python train.py --epochs 20   # saves the best checkpoint to resnet18_nicu.pth
 python evaluate.py            # train/val/test metrics
 python evaluate.py --cv       # grouped 5-fold cross-validation
 ```
+
+On macOS / Linux, `python` inside an activated virtual environment is the
+environment's Python; outside it, use `python3`.
 
 The split is grouped by identical audio content so duplicate recordings never
 appear in both train and test. Last measured: about 95.7% test accuracy and
@@ -181,6 +228,7 @@ appear in both train and test. Last measured: about 95.7% test accuracy and
 | Problem | Fix |
 |---|---|
 | Analysis fails with a PyTorch or module error | Set `PYTHON_BIN` to the `.venv` Python before `npm start` |
+| macOS: server fails on port 5000, or answers 403 | AirPlay Receiver uses that port; turn it off or use `PORT=5001` and `API_PORT=5001` (see above) |
 | Report says "Template report" | No provider worked; check keys in `backend/.env` and the API server terminal, then restart the server |
 | Groq returns "Invalid API Key" | Create a new key at console.groq.com and update `.env` |
 | Changed `.env` but nothing changed | Restart the API server (it reads `.env` on start) |

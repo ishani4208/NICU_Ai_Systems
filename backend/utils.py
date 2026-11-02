@@ -9,14 +9,11 @@ log = logging.getLogger("report")
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
-OLLAMA_BASE_URL = os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434/v1")
-OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "llama3.2:3b")
 
 # ---- Lazy client init so a missing key for ONE provider doesn't crash the whole app ----
 _groq_client = None
 _gemini_client = None
 _openrouter_client = None
-_ollama_client = None
 
 
 def _get_groq_client():
@@ -41,15 +38,6 @@ def _get_openrouter_client():
         from openai import OpenAI
         _openrouter_client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=OPENROUTER_API_KEY, timeout=30)
     return _openrouter_client
-
-
-def _get_ollama_client():
-    global _ollama_client
-    if _ollama_client is None:
-        from openai import OpenAI
-        # Local CPU generation is slow, so allow a long timeout; the key is ignored by Ollama
-        _ollama_client = OpenAI(base_url=OLLAMA_BASE_URL, api_key="ollama", timeout=180)
-    return _ollama_client
 
 
 SYSTEM_PROMPT = (
@@ -130,13 +118,6 @@ PROVIDERS = {
         "has_key": lambda: bool(OPENROUTER_API_KEY),
         "models": ["openrouter/free"],
         "stream": lambda prompt, model: _stream_chat_completions(_get_openrouter_client(), prompt, model),
-    },
-    # Opt-in only: not part of DEFAULT_ORDER, so it runs only when selected explicitly
-    "ollama": {
-        "key_name": "(none)",
-        "has_key": lambda: True,
-        "models": [OLLAMA_MODEL],
-        "stream": lambda prompt, model: _stream_chat_completions(_get_ollama_client(), prompt, model),
     },
 }
 

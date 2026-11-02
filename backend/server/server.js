@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 const PROJECT_ROOT = path.join(__dirname, "..");
 const PYTHON_BIN = process.env.PYTHON_BIN || "python";
 const MAX_NOTES_LENGTH = 2000;
-const PROVIDERS = ["auto", "gemini", "groq", "openrouter", "ollama", "template"];
+const PROVIDERS = ["auto", "gemini", "groq", "openrouter", "template"];
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 const STORAGE_DIR = path.join(__dirname, "storage");

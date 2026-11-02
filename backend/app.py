@@ -142,7 +142,7 @@ else:
 
 st.sidebar.divider()
 st.sidebar.header("Clinical Report Settings")
-provider = st.sidebar.selectbox("LLM Report Provider:", ["auto", "gemini", "groq", "openrouter", "ollama", "template"])
+provider = st.sidebar.selectbox("LLM Report Provider:", ["auto", "gemini", "groq", "openrouter", "template"])
 rag_context = st.sidebar.text_area("Optional RAG Clinical Context:", "", placeholder="Enter patient history or clinical notes...")
 
 # --- Main Layout ---

@@ -156,7 +156,6 @@ export default function Dashboard() {
               <option value="gemini">Gemini</option>
               <option value="groq">Groq</option>
               <option value="openrouter">OpenRouter</option>
-              <option value="ollama">Ollama (local)</option>
               <option value="template">Template only (no AI)</option>
             </select>
 
